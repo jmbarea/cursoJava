@@ -1,4 +1,0 @@
-nuevo archivo
-de texto
-para probar las
-branches
