@@ -3,5 +3,5 @@ Esto es esto es
 una prueba
 de texto
 
-en varias
+en diferentes
 lineas
