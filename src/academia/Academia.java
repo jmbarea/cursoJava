@@ -1,5 +1,7 @@
 package academia;
 
+import java.util.Map;
+
 public class Academia {
 
     String nombre;
@@ -8,7 +10,7 @@ public class Academia {
     Map<Integer, Alumno> mapAlumnos;
     Map<Integer, Profesor> mapProfesores;
     Map<Integer, Asignatura> mapAsignaturas;
-    Map<String, Aulas> mapAulas;
+    Map<String, Aula> mapAulas;
     
     public void addAlumno(Alumno alumno) {
         
@@ -18,28 +20,27 @@ public class Academia {
         
     }
     
-    public void addProfesor(Alumno alumno) {
+    public void addProfesor(Profesor profesor) {
         
     }
     
-    public void removeProfesor(Integer idAlumno) {
+    public void removeProfesor(Integer idProfesor) {
         
     }
     
-    public void addAsignatura(Alumno alumno) {
+    public void addAsignatura(Asignatura asignatura) {
         
     }
     
-    public void removeAsignatura(Integer idAlumno) {
+    public void removeAsignatura(Integer idAsignatura) {
         
     }
     
-    public void addAula(Alumno alumno) {
+    public void addAula(Aula aula) {
         
     }
     
-    public void removeAula(Integer idAlumno) {
+    public void removeAula(String nombreAula) {
         
     }
->>>>>>> SBR Clase Academia
 }
