@@ -31,6 +31,16 @@ public class Academia {
     
     public void removeAlumno(Integer idAlumno) {
         
+        Alumno alumno = mapAlumnos.get(idAlumno);
+        
+        if (alumno.getAsignaturas() != null) {
+            
+            for (Asignatura asignatura : alumno.getAsignaturas()) {
+                
+                asignatura.removeAlumno(alumno);
+            }
+        }
+        
         mapAlumnos.remove(idAlumno);
     }
     
@@ -48,6 +58,16 @@ public class Academia {
     }
     
     public void removeProfesor(Integer idProfesor) {
+        
+        Profesor profesor = mapProfesores.get(idProfesor);
+        
+        if (profesor.getAsignaturas() != null) {
+            
+            for (Asignatura asignatura : profesor.getAsignaturas()) {
+                
+                asignatura.setProfesor(null);
+            }
+        }
         
         mapProfesores.remove(idProfesor);
     }
@@ -78,6 +98,26 @@ public class Academia {
     
     public void removeAsignatura(Integer idAsignatura) {
         
+        Asignatura asignatura = mapAsignaturas.get(idAsignatura);
+        
+        if (asignatura.getProfesor() != null) {
+            
+            asignatura.getProfesor().getAsignaturas().remove(asignatura);
+        }
+        
+        if (asignatura.getAula() != null) {
+            
+            asignatura.getAula().getAsignaturas().remove(asignatura);
+        }
+        
+        if (asignatura.getAlumnos() != null) {
+            
+            for (Alumno alumno : asignatura.getAlumnos()) {
+                
+                alumno.getAsignaturas().remove(asignatura);
+            }
+        }
+        
         mapAsignaturas.remove(idAsignatura);
     }
     
@@ -95,6 +135,16 @@ public class Academia {
     }
     
     public void removeAula(String nombreAula) {
+        
+        Aula aula = mapAulas.get(nombreAula);
+        
+        if (aula.getAsignaturas() != null) {
+            
+            for (Asignatura asignatura : aula.getAsignaturas()) {
+                
+                asignatura.setAula(null);
+            }
+        }
         
         mapAulas.remove(nombreAula);
     }
