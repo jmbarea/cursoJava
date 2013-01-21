@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.Set;
 
 public class Asignatura {
+
     private Integer id;
     private String nombre;
     private Profesor profesor;
@@ -44,20 +45,23 @@ public class Asignatura {
     public Set<Alumno> getAlumnos() {
         return alumnos;
     }
-    
-    public void addAlumno(Alumno alumno){
+
+    public void addAlumno(Alumno alumno) {
         this.alumnos.add(alumno);
-//        // asignaturas actuales del alumno
-//        Set<Asignatura> asignaturas = alumno.getAsignaturas();
-//        
-//        // 
-//        if(!asignaturas.contains(this)){
-//            alumnos.add(alumno);
-//        }
-        
+                
+        // asignaturas actuales del alumno
+        Set<Asignatura> asignaturas = alumno.getAsignaturas();
+
+        // si el alumno no tiene la asignatura actual,
+        // se le añade
+        if (!asignaturas.contains(this)) {
+            alumno.addAsignatura(this);
+        }
+
     }
-    public void removeAlumno(Alumno alumno){
-        this.alumnos.remove(alumno);
+
+    public void removeAlumno(Alumno alumno) {
+        this.alumnos.remove(a);
     }
 
     public void setProfesor(Profesor profesor) {
@@ -87,6 +91,4 @@ public class Asignatura {
     public void setFin(Date fin) {
         this.fin = fin;
     }
-    
-    
 }
