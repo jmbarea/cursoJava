@@ -52,8 +52,7 @@ public class Asignatura {
         // asignaturas actuales del alumno
         Set<Asignatura> asignaturas = alumno.getAsignaturas();
 
-        // si el alumno no tiene la asignatura actual,
-        // se le añade
+        // si el alumno no tiene la asignatura actual, se le añade
         if (!asignaturas.contains(this)) {
             alumno.addAsignatura(this);
         }
@@ -61,7 +60,7 @@ public class Asignatura {
     }
 
     public void removeAlumno(Alumno alumno) {
-        this.alumnos.remove(a);
+        this.alumnos.remove(alumno);
     }
 
     public void setProfesor(Profesor profesor) {
