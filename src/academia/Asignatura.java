@@ -48,14 +48,17 @@ public class Asignatura {
 
     public void addAlumno(Alumno alumno) {
         this.alumnos.add(alumno);
+        
+        // al alumno le añadimos la asignatura
+        alumno.addAsignatura(this);
                 
-        // asignaturas actuales del alumno
-        Set<Asignatura> asignaturas = alumno.getAsignaturas();
-
-        // si el alumno no tiene la asignatura actual, se le añade
-        if (!asignaturas.contains(this)) {
-            alumno.addAsignatura(this);
-        }
+//        // asignaturas actuales del alumno
+//        Set<Asignatura> asignaturas = alumno.getAsignaturas();
+//
+//        // si el alumno no tiene la asignatura actual, se le añade
+//        if (!asignaturas.contains(this)) {
+//            alumno.addAsignatura(this);
+//        }
 
     }
 

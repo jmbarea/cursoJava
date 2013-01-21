@@ -12,11 +12,11 @@ public class Aula {
     
     
     public void addAsignatura(Asignatura asignatura) {
-        
+        asignaturas.add(asignatura);
     }
     
-    public void removeAsignatura(Integer idAsignatura) {
-        
+    public void removeAsignatura(Asignatura asignatura) {
+        asignaturas.remove(asignatura);
     }
     
     
