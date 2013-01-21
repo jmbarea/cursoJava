@@ -4,11 +4,12 @@ import java.util.Set;
 
 public class Aula {
     
-    String nombre;
-    int capacidad;
-    boolean tieneProyector;
+    private String nombre;
+    private int capacidad;
+    private boolean tieneProyector;
     
-    Set<Asignatura> asignaturas;
+    private Set<Asignatura> asignaturas;
+    
     
     public void addAsignatura(Asignatura asignatura) {
         
@@ -16,5 +17,39 @@ public class Aula {
     
     public void removeAsignatura(Integer idAsignatura) {
         
+    }
+    
+    
+    //Getters y Setters:
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getCapacidad() {
+        return capacidad;
+    }
+
+    public void setCapacidad(int capacidad) {
+        this.capacidad = capacidad;
+    }
+
+    public boolean isTieneProyector() {
+        return tieneProyector;
+    }
+
+    public void setTieneProyector(boolean tieneProyector) {
+        this.tieneProyector = tieneProyector;
+    }
+
+    public Set<Asignatura> getAsignaturas() {
+        return asignaturas;
+    }
+
+    public void setAsignaturas(Set<Asignatura> asignaturas) {
+        this.asignaturas = asignaturas;
     }
 }
