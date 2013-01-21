@@ -19,6 +19,14 @@ public class Academia {
     public void addAlumno(Alumno alumno) {
         
         mapAlumnos.put(alumno.getId(), alumno);
+        
+        if (alumno.getAsignaturas() != null) {
+            
+            for (Asignatura asignatura : alumno.getAsignaturas()) {
+                
+                asignatura.addAlumno(alumno);
+            }
+        }
     }
     
     public void removeAlumno(Integer idAlumno) {
@@ -29,6 +37,14 @@ public class Academia {
     public void addProfesor(Profesor profesor) {
         
         mapProfesores.put(profesor.getId(), profesor);
+        
+        if (profesor.getAsignaturas() != null) {
+            
+            for (Asignatura asignatura : profesor.getAsignaturas()) {
+                
+                asignatura.setProfesor(profesor);
+            }
+        }
     }
     
     public void removeProfesor(Integer idProfesor) {
@@ -40,8 +56,24 @@ public class Academia {
         
         mapAsignaturas.put(asignatura.getId(), asignatura);
         
-        //asignatura.getProfesor().addAsignatura(asignatura);
-        //asignatura.getAula().addAsignatura(asignatura);
+        if (asignatura.getProfesor() != null) {
+            
+            asignatura.getProfesor().addAsignatura(asignatura);
+        }
+        
+        if (asignatura.getAula() != null) {
+            
+            asignatura.getAula().addAsignatura(asignatura);
+        }
+        
+        if (asignatura.getAlumnos() != null) {
+            
+            for (Alumno alumno : asignatura.getAlumnos()) {
+                
+                alumno.addAsignatura(asignatura);
+            }
+        }
+       
     }
     
     public void removeAsignatura(Integer idAsignatura) {
@@ -52,6 +84,14 @@ public class Academia {
     public void addAula(Aula aula) {
         
         mapAulas.put(aula.getNombre(), aula);
+        
+        if (aula.getAsignaturas() != null) {
+            
+            for (Asignatura asignatura : aula.getAsignaturas()) {
+                
+                asignatura.setAula(aula);
+            }
+        }
     }
     
     public void removeAula(String nombreAula) {
