@@ -1,6 +1,10 @@
 package academia;
 
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.Map;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class Academia {
 
@@ -14,7 +18,7 @@ public class Academia {
     
     public void addAlumno(Alumno alumno) {
         
-        mapAlumnos.put(alumno.id, alumno);
+        mapAlumnos.put(alumno.getId(), alumno);
     }
     
     public void removeAlumno(Integer idAlumno) {
@@ -24,7 +28,7 @@ public class Academia {
     
     public void addProfesor(Profesor profesor) {
         
-        mapProfesores.put(profesor.id, profesor);
+        mapProfesores.put(profesor.getId(), profesor);
     }
     
     public void removeProfesor(Integer idProfesor) {
@@ -53,6 +57,35 @@ public class Academia {
     public void removeAula(String nombreAula) {
         
         mapAulas.remove(nombreAula);
+    }
+    
+    public Set<Aula> aulasLibres(int hora) {
+        
+        Set<Aula> aulasLibres = new TreeSet<Aula>();
+        GregorianCalendar gcInicio = new GregorianCalendar();
+        GregorianCalendar gcFin = new GregorianCalendar();
+        int horaInicio;
+        int horaFin;
+        
+        aula:
+        for(Aula aula : mapAulas.values()) {
+            
+            for(Asignatura asignatura : aula.getAsignaturas()) {
+                
+                gcInicio.setTime(asignatura.getInicio());
+                gcFin.setTime(asignatura.getFin());
+                horaInicio = gcInicio.get(Calendar.HOUR_OF_DAY);
+                horaFin = gcFin.get(Calendar.HOUR_OF_DAY);
+                
+                if (hora >= horaInicio && hora < horaFin) {
+                    
+                    continue aula;
+                }
+            }
+            aulasLibres.add(aula);
+        }
+        
+        return aulasLibres;
     }
 
     
