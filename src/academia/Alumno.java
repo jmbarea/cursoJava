@@ -4,10 +4,10 @@ import java.util.Set;
 
 public  class Alumno extends Persona{
     
-    Set<Asignatura> asignaturas;
+    Set<Asignatura> asignaturasAlumno;
 
     public Set<Asignatura> getAsignaturas() {
-        return asignaturas;
+        return asignaturasAlumno;
     }
     
     public Alumno(int id, String nombre, String direccion) {
@@ -16,14 +16,14 @@ public  class Alumno extends Persona{
     }    
     @Override
     public void addAsignatura(Asignatura asignatura){
-        this.asignaturas.add(asignatura); 
+        this.asignaturasAlumno.add(asignatura); 
         asignatura.addAlumno(this);
          
     }
     
     @Override
     public void removeAsignatura(Asignatura asignatura){
-        this.asignaturas.remove(asignatura);
+        this.asignaturasAlumno.remove(asignatura);
         asignatura.removeAlumno(this);
     }
 }

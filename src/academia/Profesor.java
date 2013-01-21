@@ -4,10 +4,10 @@ import java.util.Set;
 
 public class Profesor extends Persona {
 
-    Set<Asignatura> asignaturas;
+    Set<Asignatura> asignaturasProfesor;
 
     public Set<Asignatura> getAsignaturas() {
-        return asignaturas;
+        return asignaturasProfesor;
     }
 
     public Profesor(int id, String nombre, String direccion) {
@@ -16,11 +16,11 @@ public class Profesor extends Persona {
 
     @Override
     public void addAsignatura(Asignatura asignatura) {
-        this.asignaturas.add(asignatura);
+        this.asignaturasProfesor.add(asignatura);
     }
 
     @Override
     public void removeAsignatura(Asignatura asignatura) {
-        this.asignaturas.remove(asignatura);
+        this.asignaturasProfesor.remove(asignatura);
     }
 }

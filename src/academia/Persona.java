@@ -36,9 +36,7 @@ public class Persona {
         this.direccion = direccion;
     }
 
-    public void addAsignatura(Asignatura asignatura) {
-    }
-
-    public void removeAsignatura(Asignatura asignatura) {
-    }
+    public void addAsignatura(Asignatura asignatura) { }
+    
+    public void removeAsignatura(Asignatura asignatura) { }
 }
