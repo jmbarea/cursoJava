@@ -46,10 +46,18 @@ public class Asignatura {
     }
     
     public void addAlumno(Alumno alumno){
+        this.alumnos.add(alumno);
+//        // asignaturas actuales del alumno
+//        Set<Asignatura> asignaturas = alumno.getAsignaturas();
+//        
+//        // 
+//        if(!asignaturas.contains(this)){
+//            alumnos.add(alumno);
+//        }
         
     }
     public void removeAlumno(Alumno alumno){
-        
+        this.alumnos.remove(alumno);
     }
 
     public void setProfesor(Profesor profesor) {
