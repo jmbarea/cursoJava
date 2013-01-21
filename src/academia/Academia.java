@@ -35,6 +35,9 @@ public class Academia {
     public void addAsignatura(Asignatura asignatura) {
         
         mapAsignaturas.put(asignatura.getId(), asignatura);
+        
+        //asignatura.getProfesor().addAsignatura(asignatura);
+        //asignatura.getAula().addAsignatura(asignatura);
     }
     
     public void removeAsignatura(Integer idAsignatura) {
