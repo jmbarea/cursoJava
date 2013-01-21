@@ -16,11 +16,14 @@ public  class Alumno extends Persona{
     }    
     @Override
     public void addAsignatura(Asignatura asignatura){
-        this.asignaturas.add(asignatura);
+        this.asignaturas.add(asignatura); 
+        asignatura.addAlumno(this);
+         
     }
     
     @Override
     public void removeAsignatura(Asignatura asignatura){
         this.asignaturas.remove(asignatura);
+        asignatura.removeAlumno(this);
     }
 }
